@@ -8,7 +8,7 @@ public class ErrorsHistogram {
         int uNum = charNum(s, 'u'), wNum = charNum(s, 'w'), xNum = charNum(s, 'x'), zNum = charNum(s, 'z');
 
         String result = "";
-        if(uNum + wNum + xNum + zNum == 0){
+        if (s.replaceAll("[^uwxz]", "").length() == 0) {
             return "";
         }
         if (uNum > 0) {
