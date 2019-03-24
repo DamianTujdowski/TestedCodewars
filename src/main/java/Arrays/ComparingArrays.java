@@ -1,4 +1,4 @@
-package Numbers;
+package Arrays;
 
 import java.util.Arrays;
 import java.util.List;
@@ -7,25 +7,19 @@ import java.util.stream.Stream;
 
 public class ComparingArrays {
     public boolean comp(int[] a, int[] b) {
-
         if (a == null || b == null) {
             return false;
         }
-        List<Integer> list = Stream.of(a)
-                .flatMapToInt(Arrays::stream)
+
+        List<Integer> list = Arrays.stream(a)
                 .map(x -> x * x)
                 .boxed()
                 .collect(Collectors.toList());
 
-//        List<Integer> compList = Stream.of(b)
-//                .flatMapToInt(Arrays::stream)
-//                .boxed()
-//                .collect(Collectors.toList());
-//
-//        return compList.containsAll(list) && list.containsAll(compList);
+        int aSum = list.stream().mapToInt(Integer::intValue).sum();
+        int bSum = Arrays.stream(b).sum();
 
-        return Stream.of(b)
-                .flatMapToInt(Arrays::stream)
+        return aSum == bSum && Arrays.stream(b)
                 .boxed()
                 .allMatch(list::contains);
     }
