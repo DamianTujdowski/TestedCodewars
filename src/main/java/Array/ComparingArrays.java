@@ -1,9 +1,8 @@
-package Arrays;
+package Array;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class ComparingArrays {
     public boolean comp(int[] a, int[] b) {

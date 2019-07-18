@@ -1,4 +1,4 @@
-package Arrays;
+package Array;
 
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
